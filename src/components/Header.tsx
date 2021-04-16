@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Logo from '../assets/icons/Logo.svg'
 
 const HeaderComponents = styled.div `
-    height: 40px;
+    height: 70px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -39,7 +39,7 @@ const Button = styled.button `
     transition: .5s;
 `
 
-function Header(){
+const Header = () => {
     return (
         <HeaderComponents>
             <HeaderContainer>

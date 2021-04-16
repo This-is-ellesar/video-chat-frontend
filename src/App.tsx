@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header'
 import Dialog from './components/base/AppDialog'
 
-function App() {
+const App = () => {
+  const [show, setShow] = useState(false)
+
   return (
     <div className="App">
       <Header />
-
-      <Dialog />
+      <Dialog block={show}>Привет ебать</Dialog>
     </div>
   );
 }
