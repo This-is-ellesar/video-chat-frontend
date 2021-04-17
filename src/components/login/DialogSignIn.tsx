@@ -1,12 +1,13 @@
 import react from 'react'
-import { SignIn } from '../../assets/style/login/DialogSignIn'
+import { SignIn, Input, Button } from '../../assets/style/login/DialogSignIn'
 
 
 const DialogSignIn = () => {
     return (
         <SignIn>
-            <input type="text"/>
-            <input type="text"/>
+            <Input type="text" placeholder="Логин" />
+            <Input type="password" placeholder="Пароль" />
+            <Button>Войти</Button>
         </SignIn>
     )
 }

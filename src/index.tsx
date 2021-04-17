@@ -2,18 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createGlobalStyle } from 'styled-components'
 
-const AppContainer = createGlobalStyle `
-  * {
-    margin: 0;
-    padding: 0;
-  }
-`
+import { AppComponent } from './assets/style/AppGlobal'
+
 
 ReactDOM.render(
   <>
-    <AppContainer />
+    <AppComponent />
     <App />
   </>,
   document.getElementById('root')

@@ -16,11 +16,11 @@ const App = () => {
     <div className="App">
       <Header onToggle={modalToggle} />
       <Dialog 
-      toggle={show} 
-      onToggle={modalToggle}
-      width={"500"}
-      dialogTitle={'Вход'}
-      dialogContent={<DialogSignIn />}
+        toggle={show} 
+        onToggle={modalToggle}
+        width={"500"}
+        dialogTitle={'Вход'}
+        dialogContent={<DialogSignIn />}
       />
     </div>
   );

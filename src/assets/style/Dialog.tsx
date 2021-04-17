@@ -6,6 +6,7 @@ export const Dialog = styled.div `
     display: ${ ({ toggle } : any) => toggle ? 'block' : 'none'};
     width: 100%;
     height: 100%;
+    font-family: 'Roboto';
 `
 
 export const DialogContainer = styled.div `
@@ -29,12 +30,16 @@ export const Overlay = styled.div `
 export const Title = styled.div `
     display: flex;
     justify-content: space-between;
-    padding: 15px 25px;
+    height: max-content;
+    padding: 35px 25px;
     img {
         cursor: pointer;
+    }
+    h1 {
+        margin: 0;
     }
 `
 
 export const Content = styled.div `
-    padding: 15px 25px;
+    padding: 0px 25px;
 `
