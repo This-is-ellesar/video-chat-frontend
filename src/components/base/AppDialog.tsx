@@ -1,33 +1,21 @@
 import react from 'react'
-import styled from 'styled-components'
 
-
-const Dialog = styled.div `
-    position: absolute;
-    top: 0; left: 0;
-    display: ${ ({ block } : any) => block ? 'block' : 'none'};
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-`
-
-const DialogContainer = styled.div `
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    height: 400px;    
-    background-color: #fff;
-    border-radius: 4px;
-    z-index: 999;
-`
-
+import { Dialog, DialogContainer, Overlay, Title, Content } from '../../assets/style/Dialog'
+import dialogClose from '../../assets/icons/dialog-close.svg'
+ 
 
 const AppDialog = (props: any) => {
     return (
         <Dialog {...props}>
+            <Overlay onClick={props.onToggle} />
             <DialogContainer>
+                <Title>
+                    <h1>{ props.dialogTitle }</h1>
+                    <img src={dialogClose} alt="Крестик" onClick={props.onToggle} />
+                </Title>
+                <Content>
+                    {props.dialogContent}
+                </Content>
             </DialogContainer>
         </Dialog>
     )
