@@ -6,7 +6,6 @@ export const Dialog = styled.div `
     display: ${ ({ toggle } : any) => toggle ? 'block' : 'none'};
     width: 100%;
     height: 100%;
-    font-family: 'Roboto';
 `
 
 export const DialogContainer = styled.div `
@@ -31,7 +30,7 @@ export const Title = styled.div `
     display: flex;
     justify-content: space-between;
     height: max-content;
-    padding: 35px 25px;
+    padding: 35px;
     img {
         cursor: pointer;
     }
