@@ -1,7 +1,7 @@
 import react, { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
-import AppRouter from './AppRouter'
+import { routes } from './router/router'
 
 import Header from './components/base/AppHeader'
 import Dialog from './components/base/AppDialog'
@@ -17,15 +17,19 @@ const App = () => {
 
   return (
     <>
-      <BrowserRouter>
-        <AppRouter />
-        <Header onToggle={modalToggle} />
-        <Dialog 
-          open={show} 
-          onToggle={modalToggle}
-          dialogContent={<DialogSignIn />}
-        />
-      </BrowserRouter>
+      <Header onToggle={modalToggle} />
+
+      <main>
+        {routes.map(({path, component} : any) => {
+          <Route path={path} component={component} />
+        })}
+      </main>
+
+      <Dialog 
+        open={show} 
+        onToggle={modalToggle}
+        dialogContent={<DialogSignIn />}
+      />
     </>
   )
 }

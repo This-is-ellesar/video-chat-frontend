@@ -1,12 +1,12 @@
 import React from 'react'
-import { AppBar, Toolbar, Button } from '@material-ui/core';
+import { AppBar, Toolbar, Button, TextField } from '@material-ui/core';
 
 import { HeaderComponents, HeaderContainerItem, HeaderContainer } from '../../assets/style/Header'
 import Logo from '../../assets/icons/logo.svg'
 
 const Header = ({ onToggle }: any) => {
     return (
-        <AppBar style={{ background: '#101427'}}>
+        <AppBar style={{ background: '#161a31'}}>
             <Toolbar>
                 <HeaderComponents>
                     <HeaderContainer>
