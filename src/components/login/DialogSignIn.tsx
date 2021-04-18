@@ -1,13 +1,31 @@
 import react from 'react'
-import { SignIn, Input, Button } from '../../assets/style/login/DialogSignIn'
+import { Button, TextField } from '@material-ui/core/';
+import { SignIn, InputWrapper } from '../../assets/style/login/DialogSignIn'
 
 
 const DialogSignIn = () => {
     return (
         <SignIn>
-            <Input type="text" placeholder="Логин" />
-            <Input type="password" placeholder="Пароль" />
-            <Button>Войти</Button>
+            <InputWrapper>
+                <TextField
+                type="email"
+                label="Логин"
+                id="outlined-size-small"
+                variant="outlined"
+                size="small"
+                />
+            </InputWrapper>
+            <InputWrapper>
+                <TextField
+                label="Пароль"
+                id="outlined-size-small"
+                variant="outlined"
+                size="small"
+                />
+            </InputWrapper>
+            <InputWrapper>
+                <Button>Войти</Button>
+            </InputWrapper>
         </SignIn>
     )
 }
