@@ -1,14 +1,12 @@
 import React from 'react'
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import { AppBar, Toolbar, Button } from '@material-ui/core';
 
 import { HeaderComponents, HeaderContainerItem, HeaderContainer } from '../../assets/style/Header'
-import { Button } from '../../assets/style/App'
 import Logo from '../../assets/icons/logo.svg'
 
-const Header = ({onToggle}: any) => {
+const Header = ({ onToggle }: any) => {
     return (
-        <AppBar>
+        <AppBar style={{ background: '#101427'}}>
             <Toolbar>
                 <HeaderComponents>
                     <HeaderContainer>
@@ -16,10 +14,16 @@ const Header = ({onToggle}: any) => {
                             <img src={Logo} alt="Логотип"/>
                         </HeaderContainerItem>
                         <HeaderContainerItem>
-                            <div>
-                                <Button onClick={onToggle}>вход</Button>
-                                <Button>авторизация</Button>
-                            </div>
+                            <Button
+                                className="sign-in"
+                                variant="outlined"
+                                onClick={ onToggle }
+                            >sign_in</Button>
+                            <div className="divider"></div>
+                            <Button
+                                variant="outlined"
+                                className="sign-in"
+                            >sign_up</Button>
                         </HeaderContainerItem>
                     </HeaderContainer>
                 </HeaderComponents>

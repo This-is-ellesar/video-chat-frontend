@@ -19,4 +19,14 @@ export const HeaderContainer = styled.div `
 export const HeaderContainerItem = styled.div `
     display: flex;
     align-items: center;
+    .sign-in {
+        margin: 0 10px;
+        color: #fff;
+        background-color: #5e46ee;
+    }
+    .divider{ 
+        height: 20px;
+        padding-right: 0;
+        border-right: 1px solid #616a94;
+    }
 `
