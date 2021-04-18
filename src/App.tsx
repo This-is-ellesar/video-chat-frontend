@@ -1,4 +1,7 @@
 import react, { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom'
+
+import AppRouter from './AppRouter'
 
 import Header from './components/base/AppHeader'
 import Dialog from './components/base/AppDialog'
@@ -14,16 +17,17 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header onToggle={modalToggle} />
-      <Dialog 
-        toggle={show} 
-        onToggle={modalToggle}
-        width={"500"}
-        dialogTitle={'Вход'}
-        dialogContent={<DialogSignIn />}
-      />
+      <BrowserRouter>
+        <AppRouter />
+        <Header onToggle={modalToggle} />
+        <Dialog 
+          open={show} 
+          onToggle={modalToggle}
+          dialogContent={<DialogSignIn />}
+        />
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
 export default App;
