@@ -1,7 +1,8 @@
 import React from 'react'
-import { AppBar, Toolbar, Button, TextField } from '@material-ui/core';
-
+//ui
+import { AppBar, Toolbar, Button } from '@material-ui/core';
 import { HeaderComponents, HeaderContainerItem, HeaderContainer } from '../../assets/style/Header'
+//icons
 import Logo from '../../assets/icons/logo.svg'
 
 const Header = ({ onToggle }: any) => {

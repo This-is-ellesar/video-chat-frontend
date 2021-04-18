@@ -1,5 +1,4 @@
 import { LOGIN_ROUTE, ROOMS_ROUTE } from '../utils/consts'
-
 //views
 import Rooms from '../views/Rooms'
 import SignIn from '../views/SignIn'
