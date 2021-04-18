@@ -16,7 +16,7 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <>
       <BrowserRouter>
         <AppRouter />
         <Header onToggle={modalToggle} />
@@ -26,7 +26,7 @@ const App = () => {
           dialogContent={<DialogSignIn />}
         />
       </BrowserRouter>
-    </div>
+    </>
   )
 }
 
