@@ -1,32 +1,21 @@
-import react from 'react'
-//ui
-import { Button, TextField } from '@material-ui/core/';
+import react, { FC } from 'react'
+import InputMask from 'react-input-mask'
+//ui 
+import { Button } from '@material-ui/core'
 import { SignIn, InputWrapper } from '../../assets/style/login/DialogSignIn'
 
 
-const DialogSignIn = () => {
+const DialogSignIn: FC = () => {
     return (
         <SignIn>
             <InputWrapper>
-                <TextField
-                type="email"
-                label="Логин"
-                id="outlined-size-small"
-                variant="outlined"
-                size="small"
+                <h4>Чтобы продолжить, введите номер телефона:</h4>
+                <InputMask
+                mask="+7-(999)-999-99-99"
+                placeholder="+7-(999)-999-99-99"
+                disabled={false}
                 />
-            </InputWrapper>
-            <InputWrapper>
-                <TextField
-                type="password"
-                label="Пароль"
-                id="outlined-size-small"
-                variant="outlined"
-                size="small"
-                />
-            </InputWrapper>
-            <InputWrapper>
-                <Button>Войти</Button>
+                <Button>Продложить</Button>
             </InputWrapper>
         </SignIn>
     )

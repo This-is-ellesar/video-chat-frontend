@@ -22,11 +22,6 @@ const Header: FC<IHeader> = ({ onToggle }) => {
                                 variant="outlined"
                                 onClick={ onToggle }
                             >sign_in</Button>
-                            <div className="divider"></div>
-                            <Button
-                                variant="outlined"
-                                className="sign-in"
-                            >sign_up</Button>
                         </HeaderContainerItem>
                     </HeaderContainer>
                 </HeaderComponents>
