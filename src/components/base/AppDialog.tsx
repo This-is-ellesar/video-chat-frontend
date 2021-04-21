@@ -1,12 +1,11 @@
-import react from 'react'
+import react, { FC } from 'react'
 
 import { Dialog, DialogContent, DialogTitle } from '@material-ui/core/';
-import {DialogContainer, Content } from '../../assets/style/Dialog'
+import { DialogContainer, Content } from '../../assets/style/Dialog'
 
-import dialogClose from '../../assets/icons/dialog-close.svg'
- 
+import { IDialog } from '../../types/base/AppDialog'
 
-const AppDialog = (props: any) => {
+const AppDialog: FC<IDialog> = (props) => {
     return (
         <Dialog
         open={props.open}

@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 //ui
 import { AppBar, Toolbar, Button } from '@material-ui/core';
 import { HeaderComponents, HeaderContainerItem, HeaderContainer } from '../../assets/style/Header'
 //icons
 import Logo from '../../assets/icons/logo.svg'
+//interfaces
+import { IHeader } from '../../types/base/AppHeader';
 
-const Header = ({ onToggle }: any) => {
+const Header: FC<IHeader> = ({ onToggle }) => {
     return (
         <AppBar style={{ background: '#161a31'}}>
             <Toolbar>
