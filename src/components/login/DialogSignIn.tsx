@@ -1,4 +1,5 @@
 import react from 'react'
+//ui
 import { Button, TextField } from '@material-ui/core/';
 import { SignIn, InputWrapper } from '../../assets/style/login/DialogSignIn'
 
@@ -17,6 +18,7 @@ const DialogSignIn = () => {
             </InputWrapper>
             <InputWrapper>
                 <TextField
+                type="password"
                 label="Пароль"
                 id="outlined-size-small"
                 variant="outlined"

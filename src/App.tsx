@@ -2,8 +2,6 @@ import react, { useState } from 'react';
 import { Route } from 'react-router-dom'
 //routes
 import { routes } from './router/router'
-//views
-import Rooms from './views/Rooms'
 //components
 import Header from './components/base/AppHeader'
 import Dialog from './components/base/AppDialog'
@@ -24,8 +22,6 @@ const App = () => {
         {routes.map(({path, component} : any, index) => {
           return <Route path={path} component={component} key={index} />
         })}
-
-        <Route path={'/a'} component={Rooms} />
       </main>
 
       <Dialog 
