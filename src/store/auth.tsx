@@ -1,4 +1,4 @@
-import { IAuthState } from '../types/store/Auth'
+import { IAuthState } from './store-types'
 
 const GET_COUNT = "GET_COUNT"
 

@@ -1,9 +1,9 @@
-import react, { FC } from 'react'
+import { FC } from 'react'
 
 import { Dialog, DialogContent, DialogTitle } from '@material-ui/core/';
 import { DialogContainer, Content } from './style'
 
-import { IDialog } from '../../types/base/AppDialog'
+import { IDialog } from './App-types'
 
 const AppDialog: FC<IDialog> = (props) => {
     return (

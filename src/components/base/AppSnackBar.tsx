@@ -1,4 +1,4 @@
-import react, { FC } from 'react'
+import { FC } from 'react'
 //ui
 import { Snackbar } from '@material-ui/core';
 

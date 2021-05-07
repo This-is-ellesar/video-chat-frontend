@@ -1,4 +1,4 @@
-import react from 'react';
+import { Component } from 'react';
 import { Route } from 'react-router-dom'
 //views
 import Rooms from './views/Rooms/Rooms'
@@ -10,22 +10,30 @@ import SnackBar from './components/base/AppSnackBar'
 import NotFoundPage from './views/Errors/NotFound'
 //ui
 import { MainWrapper } from './components/base/style'
+//types
+import { IAppProps, IAppState } from './components/base/App-types';
 
-const App = () => {
-  return (
-    <>
-      <Header />
+class App extends Component<IAppProps, IAppState> {
 
-      <MainWrapper>
-        <Route path="/" exact component={Rooms} />
-        <Route path="/sign" component={Auth} />
-        <Route component={NotFoundPage} />
-      </MainWrapper>
-     
-      <Dialog open={false} />
-      <SnackBar />
-    </>
-  )
+  render(){
+
+    return (
+      <>
+        <Header />
+  
+        <MainWrapper>
+          <Route path="/" exact component={Rooms} />
+          <Route path="/sign" component={Auth} />
+          <Route component={NotFoundPage} />
+        </MainWrapper>
+       
+        <Dialog open={false} />
+        <SnackBar />
+      </>
+    )
+
+  }
+
 }
 
 export default App;

@@ -1,4 +1,4 @@
-import react, { Component } from 'react'
+import { Component } from 'react'
 //ui
 import { Room, RoomList, RoomListItem} from './style'
 //types
@@ -13,7 +13,7 @@ class Rooms extends Component<IProps, IState> {
         try {
             await $axios.get('/rooms/')
         } catch(e){
-            console.log(e)
+            console.error(e)
         }
     }
 

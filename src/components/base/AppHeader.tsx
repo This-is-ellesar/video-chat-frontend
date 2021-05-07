@@ -1,11 +1,11 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 //ui 
 import { HeaderComponents, HeaderContainerItem, HeaderContainer } from './style'
 //icons
 import Logo from '../../assets/icons/logo.svg'
 //interfaces
-import { IHeader } from '../../types/base/AppHeader';
+import { IHeader } from './App-types';
 
 const Header: FC<IHeader> = () => {
     return (

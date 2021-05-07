@@ -1,4 +1,4 @@
-import react, { FC } from 'react'
+import { FC } from 'react'
 import InputMask from 'react-input-mask'
 //store
 import { useDispatch } from 'react-redux'
