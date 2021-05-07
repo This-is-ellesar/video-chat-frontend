@@ -9,7 +9,6 @@ const AppDialog: FC<IDialog> = (props) => {
     return (
         <Dialog
         open={props.open}
-        onClose={props.onToggle}
         >
             <DialogTitle id="alert-dialog-title">Вход</DialogTitle>
             <DialogContent>

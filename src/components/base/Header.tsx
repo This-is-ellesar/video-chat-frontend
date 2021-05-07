@@ -19,9 +19,10 @@ export const HeaderContainer = styled.div `
 export const HeaderContainerItem = styled.div `
     display: flex;
     align-items: center;
-    .sign-in {
-        width: 120px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    a{ 
+        text-decoration: none;
         color: #fff;
-        background-color: #5e46ee;
     }
 `

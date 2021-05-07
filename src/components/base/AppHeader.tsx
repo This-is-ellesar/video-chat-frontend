@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { NavLink } from 'react-router-dom'
 //ui 
 import { AppBar, Toolbar, Button } from '@material-ui/core';
 import { HeaderComponents, HeaderContainerItem, HeaderContainer } from './Header'
@@ -7,21 +8,21 @@ import Logo from '../../assets/icons/logo.svg'
 //interfaces
 import { IHeader } from '../../types/base/AppHeader';
 
-const Header: FC<IHeader> = ({ onToggle }) => {
+const Header: FC<IHeader> = () => {
     return (
         <AppBar>
             <Toolbar>
                 <HeaderComponents>
                     <HeaderContainer>
                         <HeaderContainerItem>
-                            <img src={Logo} alt="Логотип"/>
+                            <NavLink to="/">
+                                <img src={Logo} alt="Логотип"/>
+                            </NavLink>
                         </HeaderContainerItem>
                         <HeaderContainerItem>
-                            <Button
-                                className="sign-in"
-                                variant="outlined"
-                                onClick={ onToggle }
-                            >sign_in</Button>
+                            <NavLink to="/sign">
+                                Sign In
+                            </NavLink>
                         </HeaderContainerItem>
                     </HeaderContainer>
                 </HeaderComponents>

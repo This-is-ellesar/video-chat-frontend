@@ -1,8 +1,14 @@
 import react from 'react'
+//components
+import DialogSignIn from '../../components/login/DialogSignIn'
+//style
+import { AuthWrapper } from './style'
 
 const SignIn = () => {
     return (
-        <div>dwd</div>
+        <AuthWrapper>
+            <DialogSignIn />
+        </AuthWrapper>
     )
 }
 
