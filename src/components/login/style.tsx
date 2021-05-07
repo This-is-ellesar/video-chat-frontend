@@ -27,3 +27,12 @@ export const InputWrapper = styled.div `
         margin-bottom: 20px;
     }
 `
+
+export const InputWrapperHeadline = styled.div `
+    font-size: 18px;
+    font-weight: 600;
+`
+
+export const  InputPhoneWrapper = styled.div `
+    margin: 15px;
+`

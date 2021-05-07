@@ -8,17 +8,17 @@ export const Room = styled.div `
     width: 100%;
     margin-top: 70px;
     h1{
-        color: #fff;
+        color: #000;
         font-family: 'Roboto';
         font-weight: 400;
     }
 `
 export const RoomList = styled.div `
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
+    justify-content: center;
     width: 80%;
-    background: #616a94;
+    background: #fff;
     box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
     border-radius: 4px;
 `
@@ -34,7 +34,9 @@ export const RoomListItem = styled.div `
     transition: .1s ease-in;
 
     &:hover {
-        transform: scale3d(30%);
         box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 40%), 0px 4px 5px 0px rgb(0 0 0 / 20%), 0px 1px 10px 0px rgb(0 0 0 / 15%);
+    }
+    &:active {
+        transform: scale(0.98);
     }
 `

@@ -1,8 +1,8 @@
-import react from 'react'
+import react, { FC } from 'react'
 //ui
-import { Room, RoomList, RoomListItem} from '../assets/style/rooms/Rooms'
+import { Room, RoomList, RoomListItem} from './style'
 
-const Rooms = () => {
+const Rooms: FC<any> = () => {
     return (
         <Room>
             <h1>Список комнат</h1>

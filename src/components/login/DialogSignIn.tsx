@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { getUsers } from '../../store/auth'
 //ui 
 import { Button } from '@material-ui/core'
-import { SignIn, InputWrapper } from '../../assets/style/login/DialogSignIn'
+import { SignIn, InputWrapper, InputWrapperHeadline ,InputPhoneWrapper } from './style'
 
 
 const DialogSignIn: FC = () => {
@@ -18,13 +18,18 @@ const DialogSignIn: FC = () => {
     return (
         <SignIn>
             <InputWrapper>
-                <h4>Чтобы продолжить, введите номер телефона:</h4>
-                <InputMask
-                mask="+7-(999)-999-99-99"
-                placeholder="+7-(999)-999-99-99"
-                disabled={false}
-                />
-                <Button onClick={() => signIn()}>Продложить</Button>
+
+                <InputWrapperHeadline>Чтобы продолжить, введите номер телефона:</InputWrapperHeadline>
+
+                <InputPhoneWrapper>
+                    <InputMask
+                    mask="+7-(999)-999-99-99"
+                    placeholder="+7-(999)-999-99-99"
+                    disabled={false}
+                    />
+                </InputPhoneWrapper>
+
+                <Button onClick={() => signIn()} color="primary" variant="contained">Продложить</Button>
             </InputWrapper>
         </SignIn>
     )

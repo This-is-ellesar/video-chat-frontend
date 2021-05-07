@@ -1,7 +1,5 @@
 import react, { useState } from 'react';
 import { Route } from 'react-router-dom'
-//routes
-import { routes } from './router/router'
 //components
 import Header from './components/base/AppHeader'
 import Dialog from './components/base/AppDialog'
@@ -19,10 +17,9 @@ const App = () => {
       <Header onToggle={modalToggle} />
 
       <main>
-        {routes.map(({path, component} : any, index) => {
-          return <Route path={path} component={component} key={index} />
-        })}
+        
       </main>
+
 
       <Dialog 
         open={show} 
