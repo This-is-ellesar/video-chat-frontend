@@ -24,6 +24,8 @@ class Rooms extends Component<IProps, IState> {
                 <RoomList>
                     <RoomListItem>
                     </RoomListItem>
+                    <RoomListItem>
+                    </RoomListItem>
                 </RoomList>
             </Room>
         )

@@ -1,7 +1,7 @@
 import react, { FC } from 'react'
 
 import { Dialog, DialogContent, DialogTitle } from '@material-ui/core/';
-import { DialogContainer, Content } from './Dialog'
+import { DialogContainer, Content } from './style'
 
 import { IDialog } from '../../types/base/AppDialog'
 

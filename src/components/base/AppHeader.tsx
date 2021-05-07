@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 //ui 
-import { HeaderComponents, HeaderContainerItem, HeaderContainer } from './Header'
+import { HeaderComponents, HeaderContainerItem, HeaderContainer } from './style'
 //icons
 import Logo from '../../assets/icons/logo.svg'
 //interfaces
