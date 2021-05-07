@@ -1,3 +1,6 @@
+export interface IProps {}
+export interface IState {}
+
 export interface IRooms {
     id: number | null
     name: string | null

@@ -6,6 +6,7 @@ export const HeaderComponents = styled.div `
     width: 100%;
     display: flex;
     justify-content: center;
+    background: #3f51b5;
     box-shadow: 0 5px 5px -5px rgb(0 0 0 / 50%);
 `
 

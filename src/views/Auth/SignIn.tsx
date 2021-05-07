@@ -1,15 +1,20 @@
-import react from 'react'
+import react, { Component } from 'react'
 //components
 import DialogSignIn from '../../components/login/DialogSignIn'
 //style
 import { AuthWrapper } from './style'
+//types
+import { IProps, IState } from './SignIn-types'
 
-const SignIn = () => {
-    return (
-        <AuthWrapper>
-            <DialogSignIn />
-        </AuthWrapper>
-    )
+class SignIn extends Component<IProps, IState> {
+
+    render(){
+        return (
+            <AuthWrapper>
+                <DialogSignIn />
+            </AuthWrapper>
+        )
+    }
 }
 
 export default SignIn

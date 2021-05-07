@@ -19,7 +19,7 @@ const DialogSignIn: FC = () => {
         <SignIn>
             <InputWrapper>
 
-                <InputWrapperHeadline>Чтобы продолжить, введите номер телефона:</InputWrapperHeadline>
+                <InputWrapperHeadline>To continue, enter your phone number:</InputWrapperHeadline>
 
                 <InputPhoneWrapper>
                     <InputMask
@@ -29,7 +29,8 @@ const DialogSignIn: FC = () => {
                     />
                 </InputPhoneWrapper>
 
-                <Button onClick={() => signIn()} color="primary" variant="contained">Продложить</Button>
+                <Button onClick={() => signIn()} color="primary" variant="contained">Continue</Button>
+                
             </InputWrapper>
         </SignIn>
     )

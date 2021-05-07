@@ -6,16 +6,20 @@ import Auth from './views/Auth/SignIn'
 //components
 import Header from './components/base/AppHeader'
 import Dialog from './components/base/AppDialog'
+import NotFoundPage from './views/Errors/NotFound'
+//ui
+import { MainWrapper } from './components/base/App'
 
 const App = () => {
   return (
     <>
       <Header />
 
-      <main>
+      <MainWrapper>
         <Route path="/" exact component={Rooms} />
-        <Route path="/sign" component={Auth} render={Auth} />
-      </main>
+        <Route path="/sign" component={Auth} />
+        <Route component={NotFoundPage} />
+      </MainWrapper>
 
 
       <Dialog open={false} />

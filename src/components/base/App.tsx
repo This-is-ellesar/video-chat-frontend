@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const MainWrapper = styled.div `
+    padding: 0 10%;
+`
+
 
 export const Button = styled.button `
     margin: 0 10px;

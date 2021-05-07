@@ -1,29 +1,33 @@
-import react, { FC } from 'react'
+import react, { Component } from 'react'
 //ui
 import { Room, RoomList, RoomListItem} from './style'
+//types
+import { IProps, IState } from './Rooms-types'
+//http
+import { $axios } from '../../http/axios-config'
 
-const Rooms: FC<any> = () => {
-    return (
-        <Room>
-            <h1>Список комнат</h1>
-            <RoomList>
-                <RoomListItem>
-                </RoomListItem>
-                <RoomListItem>
 
-                </RoomListItem>
-                <RoomListItem>
+class Rooms extends Component<IProps, IState> {
 
-                </RoomListItem>
-                <RoomListItem>
+    async componentDidMount() {
+        try {
+            await $axios.get('/rooms/')
+        } catch(e){
+            console.log(e)
+        }
+    }
 
-                </RoomListItem>
-                <RoomListItem>
-
-                </RoomListItem>
-            </RoomList>
-        </Room>
-    )
+    render() {
+        return (
+            <Room>
+                <h1>Rooms</h1>
+                <RoomList>
+                    <RoomListItem>
+                    </RoomListItem>
+                </RoomList>
+            </Room>
+        )
+    }
 }
 
 export default Rooms

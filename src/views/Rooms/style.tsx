@@ -3,10 +3,10 @@ import styled from 'styled-components'
 export const Room = styled.div `
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 1fr;
+    grid-template-rows: 100px 1fr;
     justify-items: center;
     width: 100%;
-    margin-top: 70px;
+    height: calc(100vh - 70px);
     h1{
         color: #000;
         font-family: 'Roboto';
@@ -16,15 +16,18 @@ export const Room = styled.div `
 export const RoomList = styled.div `
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 30px;
     width: 80%;
+    height: max-content;
+    min-height: 400px;
     background: #fff;
     box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
     border-radius: 4px;
 `
 
 export const RoomListItem = styled.div `
-    width: 20%;
+    width: 250px;
     height: 200px;
     margin: 20px;
     background: #fff;
