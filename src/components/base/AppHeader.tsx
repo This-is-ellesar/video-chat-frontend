@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 //ui 
 import { HeaderComponents, HeaderContainerItem, HeaderContainer } from './style'
@@ -8,13 +9,24 @@ import Logo from '../../assets/icons/logo.svg'
 import { IHeader } from './App-types';
 
 const Header: FC<IHeader> = () => {
+
+    const SHOW_SNACKBAR = async () => {
+        return await useDispatch()
+    }
+    
     return (
         <HeaderComponents>
             <HeaderContainer>
                 <HeaderContainerItem>
                     <NavLink to="/">
-                        <img src={Logo} alt="Логотип"/>
+                        <img 
+                        src={Logo} 
+                        alt="Логотип"
+                        />
                     </NavLink>
+                </HeaderContainerItem>
+                <HeaderContainerItem>
+                    <button onClick={() => SHOW_SNACKBAR()}>Click</button>
                 </HeaderContainerItem>
                 <HeaderContainerItem>
                     <NavLink to="/sign">
