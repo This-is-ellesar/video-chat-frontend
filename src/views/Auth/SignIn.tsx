@@ -1,6 +1,6 @@
 import { Component } from 'react'
 //components
-import DialogSignIn from '../../components/login/DialogSignIn'
+import DialogSignIn from '../../components/login/SignInForm'
 //style
 import { AuthWrapper } from './style'
 //types
