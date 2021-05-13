@@ -18,23 +18,18 @@ export const InputWrapper = styled.div `
         font-size: 12px;
         font-weight: 600;
     }
-    input{ 
-        text-align: center;
-        height: 40px;
-        width: max-content;
-        font-size: 18px;
-        background: #fafafa;
-        outline: none;
-        border: none;
-        border-radius: 4px;
-    }
 `
 
 export const InputWrapperHeadline = styled.div `
-    font-size: 16px;
+    margin-bottom: 15px;
+    font-size: 18px;
     font-weight: 600;
 `
 
-export const  InputPhoneWrapper = styled.div `
-    margin: 15px;
+export const  InputWrapperItem = styled.div `
+    display: flex;
+    justify-content: center;
+    button{ 
+        margin-top: 15px;
+    }
 `
