@@ -7,11 +7,12 @@ import { IProps, IState } from './Rooms-types'
 import { $axios } from '../../http/axios-config'
 
 
-class Rooms extends Component<IProps, IState> {
-
-    async componentDidMount() {
+export class Rooms extends Component<IProps, IState> {
+    
+    async componentWillMount() {
         try {
-            await $axios.get('/rooms/')
+            const { data } = await $axios.get('/room/rooms/')
+            this.setState(data)
         } catch(e){
             console.error(e)
         }
@@ -22,6 +23,7 @@ class Rooms extends Component<IProps, IState> {
             <Room>
                 <h1>Rooms</h1>
                 <RoomList>
+                    { this.setState }
                     <RoomListItem>
                     </RoomListItem>
                     <RoomListItem>
@@ -32,4 +34,3 @@ class Rooms extends Component<IProps, IState> {
     }
 }
 
-export default Rooms
