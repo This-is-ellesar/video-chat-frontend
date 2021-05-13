@@ -1,8 +1,16 @@
 import { IAuthState } from './store-types'
 
-const GET_COUNT = "GET_COUNT"
+const GET_TOKEN = "GET_TOKEN"
+const SET_USER = 'SET_USER'
 
 const defaultState:IAuthState = {
+    user: {
+        _id: '',
+        name: '',
+        surname: '',
+        nickname: '',
+        roles: []
+    },
     token: '',
     isAuthtentificated: false,
     isFetching: false,
@@ -10,7 +18,14 @@ const defaultState:IAuthState = {
 
 export const authReducer = (state: IAuthState = defaultState, action: any) => {
     switch(action.type){ 
-        case GET_COUNT:
+        case SET_USER: 
+            return {
+                ...state,
+                user: action.payload.user,
+                token: action.payload.token,
+                isAuthtentificated: true
+            }
+        case GET_TOKEN:
             return {
                 ...state,
                 token: action.payload
@@ -19,5 +34,12 @@ export const authReducer = (state: IAuthState = defaultState, action: any) => {
             return state
     }
 }
+export const setUser = (data: IAuthState) => ({
+    type: SET_USER,
+    payload: data
+})
 
-export const getUsers = ({token} : any) => ({type: GET_COUNT, payload: token})
+export const getUsers = (token : string) => ({
+    type: GET_TOKEN, 
+    payload: token
+})
