@@ -1,10 +1,13 @@
 export interface IProps {}
-export interface IState {}
+export interface IState {
+    rooms: IRoom[]
+}
 
-export interface IRooms {
+export interface IRoom {
     id: number | null
-    name: string | null
-    peoples: IPeople[]
+    name: string
+    avatar: string 
+    users: IPeople[]
 }
 
 export interface IPeople {
