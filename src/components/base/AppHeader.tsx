@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useDispatch } from 'react-redux'
+import { showSnackbarReducer } from '../../store/actions/snackbar'
 import { NavLink } from 'react-router-dom'
 //ui 
 import { HeaderComponents, HeaderContainerItem, HeaderContainer } from './style'
@@ -10,8 +11,9 @@ import { IHeader } from './App-types';
 
 const Header: FC<IHeader> = () => {
 
-    const SHOW_SNACKBAR = async () => {
-        return await useDispatch()
+    function SHOW_SNACKBAR(){
+        // @ts-ignore: Unreachable code error
+        useDispatch()
     }
     
     return (
