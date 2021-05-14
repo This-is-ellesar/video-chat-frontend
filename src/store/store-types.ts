@@ -6,7 +6,7 @@ export interface IAuthState {
 }
 
 export interface IBaseState {
-    snackbar: Snackbar
+    snackbar: ISnackbar
 }
 
 export interface User {
@@ -17,7 +17,7 @@ export interface User {
     nickname: string
 }
 
-export interface Snackbar {
+export interface ISnackbar {
     type: string 
     message: string
     show: boolean
