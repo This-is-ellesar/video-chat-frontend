@@ -1,18 +1,17 @@
 import { FC } from 'react'
-import { useStore } from 'react-redux'
+//store
+import { useTypedSelector } from '../hooks/useTypedSelector'
 //ui
 import { Snackbar } from '@material-ui/core';
 
 const AppSnackBar: FC = () => {
-    const snackbar = useStore().getState().base
-
-    console.log(snackbar)
+    const { message, show, type } = useTypedSelector(state => state.base.snackbar)
 
     return (
-    <Snackbar
-        open={snackbar.show}
-        message={snackbar.message}
-    />
+        <Snackbar
+            open={show}
+            message={message}
+        />
     )
 } 
 
