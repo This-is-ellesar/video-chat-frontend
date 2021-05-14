@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Route } from 'react-router-dom'
 //views
-import { Rooms } from './views/Rooms/Rooms'
+import Rooms from './views/Rooms/Rooms'
 import Auth from './views/Auth/SignIn'
 //components
 import Header from './components/base/AppHeader'
