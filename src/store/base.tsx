@@ -1,4 +1,4 @@
-import { IBaseState, Snackbar } from "./store-types"
+import { IBaseState, ISnackbar } from "./store-types"
 
 const SHOW_SNACKBAR = 'SHOW_SNACKBAR'
 
@@ -6,10 +6,9 @@ const defaultState:IBaseState = {
     snackbar : {
         type: '',
         message: '',
-        show: false
+        show: true
     }
 }
-
 
 export const baseReducer = (state: IBaseState = defaultState, action: any) => {
     switch(action.type){ 
@@ -23,7 +22,7 @@ export const baseReducer = (state: IBaseState = defaultState, action: any) => {
     }
 }
 
-export const showSnackbar = (snackbar: Snackbar) => ({
+export const showSnackbar = (snackbar: ISnackbar) => ({
     type: SHOW_SNACKBAR,
     payload: snackbar
 })
