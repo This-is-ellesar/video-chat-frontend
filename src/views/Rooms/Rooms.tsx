@@ -7,7 +7,7 @@ import { IProps, IState } from './Rooms-types'
 import { $axios } from '../../http/axios-config'
 
 
-export class Rooms extends Component<IProps, IState> {
+class Rooms extends Component<IProps, IState> {
     
     async componentWillMount() {
         try {
@@ -33,4 +33,8 @@ export class Rooms extends Component<IProps, IState> {
         )
     }
 }
+
+
+export default Rooms;
+
 
