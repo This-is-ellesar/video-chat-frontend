@@ -1,5 +1,6 @@
 export interface IProps {
   showSnackbar: (arg0: any) => void;
+  setUsers: (arg0: any) => void;
 }
 export interface IState {
   rooms: IRoom[];

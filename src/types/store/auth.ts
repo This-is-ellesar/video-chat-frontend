@@ -1,5 +1,6 @@
 export interface IAuthState {
   user: IUser | null;
+  users: IUser[] | null;
   token: string | null;
   isAuthtentificated: boolean | null;
   isFetching: boolean | null;
