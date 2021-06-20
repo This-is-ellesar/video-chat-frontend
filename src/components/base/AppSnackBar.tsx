@@ -1,20 +1,13 @@
-import { FC } from 'react'
+import { FC } from 'react';
 //store
-import { useTypedSelector } from '../hooks/useTypedSelector'
+import { useTypedSelector } from '../hooks/useTypedSelector';
 //ui
 import { Snackbar } from '@material-ui/core';
 
 const AppSnackBar: FC = () => {
-    const { message, show, type } = useTypedSelector(state => state.base.snackbar)
+  const { message, show } = useTypedSelector(state => state.base.snackbar);
 
-    return (
-        <Snackbar
-            open={show}
-            message={message}
-        />
-    )
-} 
+  return <Snackbar open={show} message={message} />;
+};
 
-
-export default AppSnackBar
-
+export default AppSnackBar;
