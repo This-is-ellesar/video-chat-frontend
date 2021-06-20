@@ -6,7 +6,7 @@ const defaultState: IBaseState = {
   snackbar: {
     type: '',
     message: '',
-    show: true,
+    show: false,
   },
 };
 

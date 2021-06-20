@@ -2,6 +2,7 @@ import { IAuthState } from '../types/store/auth';
 
 const GET_TOKEN = 'GET_TOKEN';
 const SET_USER = 'SET_USER';
+const SET_USERS = 'SET_USERS';
 
 const defaultState: IAuthState = {
   user: {
@@ -11,6 +12,7 @@ const defaultState: IAuthState = {
     nickname: '',
     roles: [],
   },
+  users: [],
   token: '',
   isAuthtentificated: false,
   isFetching: false,
@@ -30,12 +32,23 @@ export const authReducer = (state: IAuthState = defaultState, action: any) => {
         ...state,
         token: action.payload,
       };
+    case SET_USERS:
+      return {
+        ...state,
+        users: action.payload,
+      };
     default:
       return state;
   }
 };
+
 export const setUser = (data: IAuthState) => ({
   type: SET_USER,
+  payload: data,
+});
+
+export const setUsers = (data: IAuthState) => ({
+  type: SET_USERS,
   payload: data,
 });
 
