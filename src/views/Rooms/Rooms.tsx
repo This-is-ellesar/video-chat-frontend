@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 //store
-import { showSnackbar } from '../../store/base';
+import { setUsers } from '../../store/auth';
 //ui
 import { Room, RoomList, RoomListItem } from './style';
 //types
@@ -12,14 +12,10 @@ import { $axios } from '../../http/axios-config';
 class Rooms extends Component<IProps, IState> {
   async componentWillMount() {
     try {
-      const { data } = await $axios.get('/room/rooms/');
-      const snack = {
-        message: 'Ну здарова',
-        show: true,
-        type: 'message',
-      };
+      const { data } = await $axios.get('/auth/users/');
 
-      this.props.showSnackbar(snack);
+      console.log(data);
+      this.props.setUsers(data);
     } catch (e) {
       console.error(e);
     }
@@ -39,7 +35,7 @@ class Rooms extends Component<IProps, IState> {
 }
 
 const mapDispatchProps = {
-  showSnackbar,
+  setUsers,
 };
 
 export default connect(null, mapDispatchProps)(Rooms);
