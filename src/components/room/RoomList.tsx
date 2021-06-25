@@ -5,11 +5,11 @@ import { useTypedSelector } from '../hooks/useTypedSelector'
 import RoomListItem from './RoomListItem'
 
 const RoomList: FC = () => {
-  const { rooms } = useTypedSelector((state) => state.room)
+  const users: any[] = useTypedSelector((state) => state.room.rooms)
 
   return (
     <div>
-      {rooms}
+      {users}
       <RoomListItem />
     </div>
   )
