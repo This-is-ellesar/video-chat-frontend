@@ -1,9 +1,11 @@
+import { IUser } from './auth'
+
 export interface IBaseState {
-  rooms: IRoom[];
+  rooms: IRoom[]
 }
 
 export interface IRoom {
-  name: string;
-  avatar: string;
-  users: string;
+  name: string
+  avatar: string
+  users: IUser
 }
