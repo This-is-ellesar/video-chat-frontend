@@ -7,14 +7,13 @@ import { AuthWrapper } from './style'
 import { IProps, IState } from './SignIn-types'
 
 class SignIn extends Component<IProps, IState> {
-
-    render(){
-        return (
-            <AuthWrapper>
-                <DialogSignIn />
-            </AuthWrapper>
-        )
-    }
+  render() {
+    return (
+      <AuthWrapper>
+        <DialogSignIn />
+      </AuthWrapper>
+    )
+  }
 }
 
 export default SignIn
