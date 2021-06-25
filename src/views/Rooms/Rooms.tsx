@@ -1,11 +1,11 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 //components
-import RoomListS from '../../components/room/RoomList'
+import RoomList from '../../components/room/RoomList'
 //store
 import { setRooms } from '../../store/room'
 //ui
-import { Room, RoomList, RoomListItem } from './style'
+import { Room, RoomContainer } from './style'
 //types
 import { IProps, IState } from './Rooms-types'
 //http
@@ -16,7 +16,6 @@ class Rooms extends Component<IProps, IState> {
     try {
       const { data } = await $axios.get('/room/rooms/')
 
-      console.log(data)
       this.props.setRooms(data)
     } catch (e) {
       console.error(e)
@@ -26,12 +25,9 @@ class Rooms extends Component<IProps, IState> {
   render() {
     return (
       <Room>
-        <RoomList>
-          <RoomListItem>
-            <RoomListS></RoomListS>
-          </RoomListItem>
-          <RoomListItem></RoomListItem>
-        </RoomList>
+        <RoomContainer>
+          <RoomList></RoomList>
+        </RoomContainer>
       </Room>
     )
   }
