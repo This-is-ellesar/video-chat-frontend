@@ -5,6 +5,7 @@ export interface IBaseState {
 }
 
 export interface IRoom {
+  _id: string
   name: string
   avatar: string
   users: IUser
