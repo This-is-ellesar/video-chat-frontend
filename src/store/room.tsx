@@ -1,6 +1,5 @@
 import { IBaseState, IRoom } from '../types/store/room'
 
-const CREATE_ROOMS = 'CREATE_ROOMS'
 const SET_ROOMS = 'SET_ROOMS'
 
 const defaultState: IBaseState = {
@@ -9,11 +8,6 @@ const defaultState: IBaseState = {
 
 export const roomReducer = (state: IBaseState = defaultState, action: any) => {
   switch (action.type) {
-    case CREATE_ROOMS:
-      return {
-        ...state,
-        snackbar: action.payload,
-      }
     case SET_ROOMS:
       return {
         ...state,
@@ -27,9 +21,4 @@ export const roomReducer = (state: IBaseState = defaultState, action: any) => {
 export const setRooms = (rooms: IRoom[]) => ({
   type: SET_ROOMS,
   payload: rooms,
-})
-
-export const createRooms = (room: IRoom) => ({
-  type: CREATE_ROOMS,
-  payload: room,
 })
