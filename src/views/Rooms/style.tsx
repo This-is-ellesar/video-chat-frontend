@@ -13,7 +13,7 @@ export const Room = styled.div`
     font-weight: 400;
   }
 `
-export const RoomList = styled.div`
+export const RoomContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   padding: 30px;
