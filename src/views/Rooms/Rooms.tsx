@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 //components
+import RoomHeader from '../../components/room/RoomHeader'
 import RoomList from '../../components/room/RoomList'
 //store
 import { setRooms } from '../../store/room'
@@ -25,8 +26,8 @@ class Rooms extends Component<IProps, IState> {
   render() {
     return (
       <Room>
-        <h1>Rooms list</h1>
-        <RoomList></RoomList>
+        <RoomHeader />
+        <RoomList />
       </Room>
     )
   }
