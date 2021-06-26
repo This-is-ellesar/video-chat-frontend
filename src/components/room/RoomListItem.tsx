@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { NavLink } from 'react-router-dom'
 //ui
 import { RoomListItem as RoomListItemContainer } from '../../views/Rooms/style'
 import { RoomItemHeader, RoomItemMain, RoomItemFooter } from './style'
@@ -11,8 +12,13 @@ const RoomListItem: FC = () => {
         <h1>Room: 1</h1>
         <img src={closeIcon} alt="крестик" />
       </RoomItemHeader>
-      <RoomItemMain>Room description</RoomItemMain>
-      <RoomItemFooter>Room users: 2</RoomItemFooter>
+      <RoomItemMain>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. A deserunt
+      </RoomItemMain>
+      <RoomItemFooter>
+        <div>Room users: 2</div>
+        <NavLink to={`${1}/`}>Open</NavLink>
+      </RoomItemFooter>
     </RoomListItemContainer>
   )
 }
