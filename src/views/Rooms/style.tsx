@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 export const Room = styled.div`
   display: grid;
+  grid-template-rows: max-content 1fr;
   grid-template-columns: 1fr;
-  justify-items: center;
   width: 100%;
   height: calc(100vh - 70px);
-  padding-top: 40px;
   h1 {
+    padding: 20px 0;
     color: #000;
     font-family: 'Roboto';
     font-weight: 400;
