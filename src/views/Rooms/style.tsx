@@ -4,9 +4,9 @@ export const Room = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-  align-items: center;
   width: 100%;
   height: calc(100vh - 70px);
+  padding-top: 40px;
   h1 {
     color: #000;
     font-family: 'Roboto';
