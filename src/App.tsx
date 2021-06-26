@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 //views
 import Rooms from './views/Rooms/Rooms'
 import Auth from './views/Auth/SignIn'
@@ -20,9 +20,11 @@ class App extends Component<IAppProps, IAppState> {
         <Header />
 
         <MainWrapper>
-          <Route path="/" exact component={Rooms} />
-          <Route path="/sign" component={Auth} />
-          <Route path="*" component={NotFoundPage} />
+          <Switch>
+            <Route path="/" exact component={Rooms} />
+            <Route path="/auth" component={Auth} />
+            <Route path="*" component={NotFoundPage} />
+          </Switch>
         </MainWrapper>
 
         <Dialog open={false} />

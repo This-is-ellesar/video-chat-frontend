@@ -18,7 +18,7 @@ const Header: FC<IHeader> = () => {
           </NavLink>
         </HeaderContainerItem>
         <HeaderContainerItem>
-          <NavLink to="/sign">
+          <NavLink to="/auth">
             <img src={AccountIcon} alt="Sign in" title="Sign in" />
           </NavLink>
         </HeaderContainerItem>
