@@ -7,6 +7,7 @@ export const RoomItemHeader = styled.header`
   padding: 15px 15px;
   h1 {
     margin: 0;
+    padding: 0;
     font-family: 'Roboto';
     font-size: 18px;
     font-weight: 500;

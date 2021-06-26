@@ -7,4 +7,12 @@ export const NotFoundContainer = styled.div`
   width: 100%;
   height: calc(100vh - 70px);
   text-align: center;
+  a {
+    color: #3f51b5;
+    font-size: 20px;
+    text-decoration: none;
+    &:active {
+      color: #111;
+    }
+  }
 `
