@@ -1,17 +1,17 @@
-import { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Component } from 'react'
+import { Route } from 'react-router-dom'
 //views
-import Rooms from './views/Rooms/Rooms';
-import Auth from './views/Auth/SignIn';
+import Rooms from './views/Rooms/Rooms'
+import Auth from './views/Auth/SignIn'
 //components
-import Header from './components/base/AppHeader';
-import Dialog from './components/base/AppDialog';
-import SnackBar from './components/base/AppSnackBar';
-import NotFoundPage from './views/Errors/NotFound';
+import Header from './components/base/AppHeader'
+import Dialog from './components/base/AppDialog'
+import SnackBar from './components/base/AppSnackBar'
+import NotFoundPage from './views/Errors/NotFound'
 //ui
-import { MainWrapper } from './components/base/style';
+import { MainWrapper } from './components/base/style'
 //types
-import { IAppProps, IAppState } from './components/base/App-types';
+import { IAppProps, IAppState } from './components/base/App-types'
 
 class App extends Component<IAppProps, IAppState> {
   render() {
@@ -28,8 +28,8 @@ class App extends Component<IAppProps, IAppState> {
         <Dialog open={false} />
         <SnackBar />
       </>
-    );
+    )
   }
 }
 
-export default App;
+export default App
