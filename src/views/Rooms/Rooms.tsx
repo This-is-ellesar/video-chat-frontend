@@ -25,6 +25,7 @@ class Rooms extends Component<IProps, IState> {
   render() {
     return (
       <Room>
+        <h1>Rooms list</h1>
         <RoomList></RoomList>
       </Room>
     )
