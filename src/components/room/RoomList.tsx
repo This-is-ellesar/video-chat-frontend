@@ -3,15 +3,17 @@ import { FC } from 'react'
 import { useTypedSelector } from '../hooks/useTypedSelector'
 //components
 import RoomListItem from './RoomListItem'
+//ui
+import { RoomContainer } from '../../views/Rooms/style'
 
 const RoomList: FC = () => {
-  const users: any[] = useTypedSelector((state) => state.room.rooms)
+  const { users } = useTypedSelector((state) => state.room.rooms)
 
   return (
-    <div>
+    <RoomContainer>
       {users}
       <RoomListItem />
-    </div>
+    </RoomContainer>
   )
 }
 

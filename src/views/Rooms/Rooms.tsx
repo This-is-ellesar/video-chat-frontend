@@ -5,7 +5,7 @@ import RoomList from '../../components/room/RoomList'
 //store
 import { setRooms } from '../../store/room'
 //ui
-import { Room, RoomContainer } from './style'
+import { Room } from './style'
 //types
 import { IProps, IState } from './Rooms-types'
 //http
@@ -25,9 +25,7 @@ class Rooms extends Component<IProps, IState> {
   render() {
     return (
       <Room>
-        <RoomContainer>
-          <RoomList></RoomList>
-        </RoomContainer>
+        <RoomList></RoomList>
       </Room>
     )
   }
