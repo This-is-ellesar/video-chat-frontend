@@ -20,6 +20,8 @@ const DialogSignIn: FC = () => {
         name,
         password,
       })
+
+      console.log(data)
     } catch (error) {
       console.log(error)
     }
