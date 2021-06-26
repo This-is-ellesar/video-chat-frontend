@@ -27,6 +27,8 @@ export const RoomContainer = styled.div`
 `
 
 export const RoomListItem = styled.div`
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
   width: 25%;
   height: 200px;
   margin: 20px;
@@ -34,14 +36,10 @@ export const RoomListItem = styled.div`
   border-radius: 4px;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
     0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
-  cursor: pointer;
   transition: 0.1s ease-in;
 
   &:hover {
     box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 40%),
       0px 4px 5px 0px rgb(0 0 0 / 20%), 0px 1px 10px 0px rgb(0 0 0 / 15%);
-  }
-  &:active {
-    transform: scale(0.98);
   }
 `
