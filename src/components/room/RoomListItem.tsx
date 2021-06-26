@@ -17,7 +17,9 @@ const RoomListItem: FC = () => {
       </RoomItemMain>
       <RoomItemFooter>
         <div>Room users: 2</div>
-        <NavLink to={`${1}/`}>Open</NavLink>
+        <NavLink to={`${1}/`} title="Открыть">
+          Open
+        </NavLink>
       </RoomItemFooter>
     </RoomListItemContainer>
   )
