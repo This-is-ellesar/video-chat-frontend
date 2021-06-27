@@ -19,7 +19,7 @@ export const RoomHeaderStyle = styled.div`
 
 export const RoomContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px 20px;
   padding: 20px;
   width: 80%;
