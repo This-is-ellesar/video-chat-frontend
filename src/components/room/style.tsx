@@ -12,15 +12,6 @@ export const RoomItemHeader = styled.header`
     font-size: 18px;
     font-weight: 500;
   }
-  img {
-    display: none;
-  }
-  &:hover {
-    img {
-      display: block;
-      cursor: pointer;
-    }
-  }
 `
 export const RoomItemMain = styled.main`
   padding: 10px 15px;
