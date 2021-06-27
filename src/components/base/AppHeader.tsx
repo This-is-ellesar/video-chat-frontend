@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 //ui
 import { HeaderComponents, HeaderContainerItem, HeaderContainer } from './style'
+import IconButton from '@material-ui/core/IconButton'
 //icons
 import Logo from '../../assets/icons/logo.svg'
 import AccountIcon from '../../assets/icons/account-icon.svg'
@@ -14,12 +15,16 @@ const Header: FC<IHeader> = () => {
       <HeaderContainer>
         <HeaderContainerItem>
           <NavLink to="/">
-            <img src={Logo} alt="Логотип" />
+            <IconButton title="refresh" color="primary">
+              <img src={Logo} alt="Логотип" />
+            </IconButton>
           </NavLink>
         </HeaderContainerItem>
         <HeaderContainerItem>
           <NavLink to="/auth">
-            <img src={AccountIcon} alt="Sign in" title="Sign in" />
+            <IconButton size="small" title="refresh" color="primary">
+              <img src={AccountIcon} alt="Sign in" title="Sign in" />
+            </IconButton>
           </NavLink>
         </HeaderContainerItem>
       </HeaderContainer>
