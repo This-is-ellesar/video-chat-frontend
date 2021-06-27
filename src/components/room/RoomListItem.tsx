@@ -15,7 +15,11 @@ const RoomListItem: FC<IPropsRoomList> = ({ room }) => {
           <h1>Room: {room.name}</h1>
         </div>
         <div>
-          <Avatar src={`http://127.0.0.1/${room.avatar}/`} />
+          {room.avatar ? (
+            <Avatar src={`http://127.0.0.1/${room.avatar}/`} />
+          ) : (
+            <Avatar />
+          )}
         </div>
       </RoomItemHeader>
       <RoomItemMain>
