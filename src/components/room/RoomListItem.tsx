@@ -1,23 +1,29 @@
 import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 //ui
+import Avatar from '@material-ui/core/Avatar'
 import { RoomListItem as RoomListItemContainer } from '../../views/Rooms/style'
 import { RoomItemHeader, RoomItemMain, RoomItemFooter } from './style'
-import closeIcon from '../../assets/icons/close-icon.svg'
+//types
+import { IPropsRoomList } from '../../types/components/room-list-item'
 
-const RoomListItem: FC = () => {
+const RoomListItem: FC<IPropsRoomList> = ({ room }) => {
   return (
     <RoomListItemContainer>
       <RoomItemHeader>
-        <h1>Room: 1</h1>
-        <img src={closeIcon} alt="крестик" />
+        <div>
+          <h1>Room: {room.name}</h1>
+        </div>
+        <div>
+          <Avatar src={`http://127.0.0.1/${room.avatar}/`} />
+        </div>
       </RoomItemHeader>
       <RoomItemMain>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. A deserunt
       </RoomItemMain>
       <RoomItemFooter>
-        <div>Room users: 2</div>
-        <NavLink to={`${1}/`} title="Открыть">
+        <div>Room users: {room.users.length}</div>
+        <NavLink to={`${room._id}/`} title="Открыть">
           Open
         </NavLink>
       </RoomItemFooter>
