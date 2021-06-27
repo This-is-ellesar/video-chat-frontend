@@ -1,8 +1,8 @@
-import { IAuthState } from '../types/store/auth';
+import { IAuthState } from '../types/store/auth'
 
-const GET_TOKEN = 'GET_TOKEN';
-const SET_USER = 'SET_USER';
-const SET_USERS = 'SET_USERS';
+const SET_TOKEN = 'SET_TOKEN'
+const SET_USER = 'SET_USER'
+const SET_USERS = 'SET_USERS'
 
 const defaultState: IAuthState = {
   user: {
@@ -16,7 +16,7 @@ const defaultState: IAuthState = {
   token: '',
   isAuthtentificated: false,
   isFetching: false,
-};
+}
 
 export const authReducer = (state: IAuthState = defaultState, action: any) => {
   switch (action.type) {
@@ -26,33 +26,33 @@ export const authReducer = (state: IAuthState = defaultState, action: any) => {
         user: action.payload.user,
         token: action.payload.token,
         isAuthtentificated: true,
-      };
-    case GET_TOKEN:
+      }
+    case SET_TOKEN:
       return {
         ...state,
         token: action.payload,
-      };
+      }
     case SET_USERS:
       return {
         ...state,
         users: action.payload,
-      };
+      }
     default:
-      return state;
+      return state
   }
-};
+}
 
 export const setUser = (data: IAuthState) => ({
   type: SET_USER,
   payload: data,
-});
+})
 
 export const setUsers = (data: IAuthState) => ({
   type: SET_USERS,
   payload: data,
-});
+})
 
-export const getUsers = (token: string) => ({
-  type: GET_TOKEN,
+export const setToken = (token: string) => ({
+  type: SET_TOKEN,
   payload: token,
-});
+})
