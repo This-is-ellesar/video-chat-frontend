@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 import { connect } from 'react-redux'
+import { useHistory } from 'react-router'
 import { $axios } from '../../http/axios-config'
 //store
 import { setUser } from '../../store/auth'
@@ -15,6 +16,7 @@ import {
 const DialogSignIn: FC<any> = (props) => {
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
+  const history = useHistory()
 
   const signIn = async (name: string, password: string) => {
     try {
@@ -26,6 +28,7 @@ const DialogSignIn: FC<any> = (props) => {
       localStorage.setItem('token', data.token)
 
       props.setUser(data)
+      history.push('/')
     } catch (error) {
       console.log(error)
     }

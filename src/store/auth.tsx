@@ -13,7 +13,7 @@ const defaultState: IAuthState = {
   },
   users: [],
   token: '',
-  isAuthtentificated: false,
+  isAuthtentificated: !!localStorage.getItem('token') || false,
   isFetching: false,
 }
 

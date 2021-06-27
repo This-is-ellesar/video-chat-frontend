@@ -12,9 +12,7 @@ import { IHeader } from './App-types'
 
 const Header: FC<IHeader> = () => {
   // @ts-ignore: Unreachable code error
-  const { isAuthtentificated }: boolean | null = useTypedSelector(
-    (state) => state.auth,
-  )
+  const { isAuthtentificated } = useTypedSelector((state) => state.auth)
 
   console.log(isAuthtentificated)
   return (
