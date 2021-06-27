@@ -5,6 +5,7 @@ import Rooms from './views/Rooms/Rooms'
 import Auth from './views/Auth/SignIn'
 //components
 import Header from './components/base/AppHeader'
+import Footer from './components/base/AppFooter'
 import Dialog from './components/base/AppDialog'
 import SnackBar from './components/base/AppSnackBar'
 import NotFoundPage from './views/Errors/NotFound'
@@ -26,6 +27,8 @@ class App extends Component<IAppProps, IAppState> {
             <Route path="*" component={NotFoundPage} />
           </Switch>
         </MainWrapper>
+
+        <Footer />
 
         <Dialog open={false} />
         <SnackBar />
