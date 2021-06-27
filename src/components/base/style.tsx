@@ -61,3 +61,32 @@ export const DialogContainer = styled.div`
 export const Content = styled.div`
   padding: 0px 25px;
 `
+
+export const Footer = styled.footer`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+  background: rgba(11, 11, 11, 0.85);
+`
+export const FooterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 0 0;
+  width: 80%;
+  color: #fff;
+`
+export const FooterCopyRight = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  height: 30px;
+  width: 100%;
+  background: #ccc;
+  border-radius: 15px 15px 0 0;
+  span {
+    color: #000;
+    margin-left: 10px;
+  }
+`
