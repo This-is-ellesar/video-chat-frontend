@@ -8,10 +8,6 @@ const RoomList: FC = () => {
   return (
     <RoomContainer>
       <RoomListItem />
-      <RoomListItem />
-      <RoomListItem />
-      <RoomListItem />
-      <RoomListItem />
     </RoomContainer>
   )
 }
