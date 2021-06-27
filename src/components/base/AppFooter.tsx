@@ -13,7 +13,7 @@ const AppFooter: FC = () => {
         </div>
         <FooterCopyRight>
           <img src={CopyRightIcon} alt="" />
-          <span>ООО "Факинг фак" </span>
+          <span>ООО "Факинг фак"</span>
         </FooterCopyRight>
       </FooterContainer>
     </Footer>
