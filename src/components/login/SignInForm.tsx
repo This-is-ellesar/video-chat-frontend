@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 import { connect } from 'react-redux'
 import { $axios } from '../../http/axios-config'
 //store
-import { setToken, setUser } from '../../store/auth'
+import { setUser } from '../../store/auth'
 //ui
 import { Button, TextField } from '@material-ui/core'
 import {
@@ -25,8 +25,7 @@ const DialogSignIn: FC<any> = (props) => {
 
       localStorage.setItem('token', data.token)
 
-      props.setToken(data.token)
-      props.setUser(data.user)
+      props.setUser(data)
     } catch (error) {
       console.log(error)
     }
@@ -72,7 +71,6 @@ const DialogSignIn: FC<any> = (props) => {
 }
 
 const mapDispatchProps = {
-  setToken,
   setUser,
 }
 

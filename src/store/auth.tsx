@@ -27,11 +27,6 @@ export const authReducer = (state: IAuthState = defaultState, action: any) => {
         token: action.payload.token,
         isAuthtentificated: true,
       }
-    case SET_TOKEN:
-      return {
-        ...state,
-        token: action.payload,
-      }
     case SET_USERS:
       return {
         ...state,
@@ -50,9 +45,4 @@ export const setUser = (data: IAuthState) => ({
 export const setUsers = (data: IAuthState) => ({
   type: SET_USERS,
   payload: data,
-})
-
-export const setToken = (token: string) => ({
-  type: SET_TOKEN,
-  payload: token,
 })
