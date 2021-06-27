@@ -14,7 +14,6 @@ const Header: FC<IHeader> = () => {
   // @ts-ignore: Unreachable code error
   const { isAuthtentificated } = useTypedSelector((state) => state.auth)
 
-  console.log(isAuthtentificated)
   return (
     <HeaderComponents>
       <HeaderContainer>
