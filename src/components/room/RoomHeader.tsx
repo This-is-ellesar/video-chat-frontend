@@ -1,17 +1,21 @@
 import { FC } from 'react'
+import { connect } from 'react-redux'
 import { $axios } from '../../http/axios-config'
+//store
+import { setRooms } from '../../store/room'
 //ui
 import { RoomHeaderStyle } from '../../views/Rooms/style'
 import IconButton from '@material-ui/core/IconButton'
 import RefreshIcon from '../../assets/icons/refresh-icon.svg'
+//types
+import { IPropsRoomHeader } from '../../types/components/room/room-header'
 
-const RoomHeader: FC = () => {
+const RoomHeader: FC<IPropsRoomHeader> = (props) => {
   const refreshRoomList = async () => {
     try {
       const { data } = await $axios.get('/room/rooms/')
 
-      //надо обновить стейт
-      console.log(data)
+      props.setRooms(data)
     } catch (e) {
       console.log(e)
     }
@@ -32,4 +36,8 @@ const RoomHeader: FC = () => {
   )
 }
 
-export default RoomHeader
+const mapDispatchProps = {
+  setRooms,
+}
+
+export default connect(null, mapDispatchProps)(RoomHeader)
