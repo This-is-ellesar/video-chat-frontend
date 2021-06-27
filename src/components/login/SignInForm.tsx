@@ -25,7 +25,7 @@ const DialogSignIn: FC<any> = (props) => {
 
       localStorage.setItem('token', data.token)
 
-      props.setToken(data)
+      props.setToken(data.token)
     } catch (error) {
       console.log(error)
     }
