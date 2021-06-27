@@ -18,9 +18,12 @@ export const RoomHeaderStyle = styled.div`
 `
 
 export const RoomContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px 20px;
+  padding: 20px;
   width: 80%;
+  min-height: 420px;
   background: #ccc;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
     0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
@@ -30,9 +33,7 @@ export const RoomContainer = styled.div`
 export const RoomListItem = styled.div`
   display: grid;
   grid-template-rows: max-content 1fr max-content;
-  width: 25%;
   height: 200px;
-  margin: 20px;
   background: #fff;
   border-radius: 4px;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 10%),
