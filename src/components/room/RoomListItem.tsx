@@ -5,7 +5,7 @@ import Avatar from '@material-ui/core/Avatar'
 import { RoomListItem as RoomListItemContainer } from '../../views/Rooms/style'
 import { RoomItemHeader, RoomItemMain, RoomItemFooter } from './style'
 //types
-import { IPropsRoomList } from '../../types/components/room-list-item'
+import { IPropsRoomList } from '../../types/components/room/room-list-item'
 
 const RoomListItem: FC<IPropsRoomList> = ({ room }) => {
   return (
