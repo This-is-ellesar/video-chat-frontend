@@ -1,5 +1,6 @@
-import { IAuthState } from '../types/store/auth'
+import { IAuthState, IUser } from '../types/store/auth'
 
+const SET_USER_INFO = 'SET_USER_INFO'
 const SET_USER = 'SET_USER'
 const SET_USERS = 'SET_USERS'
 
@@ -22,6 +23,11 @@ export const authReducer = (state: IAuthState = defaultState, action: any) => {
     case SET_USER:
       return {
         ...state,
+        user: action.payload,
+      }
+    case SET_USER_INFO:
+      return {
+        ...state,
         user: action.payload.user,
         token: action.payload.token,
         isAuthtentificated: true,
@@ -36,8 +42,13 @@ export const authReducer = (state: IAuthState = defaultState, action: any) => {
   }
 }
 
-export const setUser = (data: IAuthState) => ({
+export const setUser = (data: IUser) => ({
   type: SET_USER,
+  payload: data,
+})
+
+export const setUserInfo = (data: IAuthState) => ({
+  type: SET_USER_INFO,
   payload: data,
 })
 
