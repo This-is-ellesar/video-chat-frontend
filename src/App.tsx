@@ -15,13 +15,22 @@ import Dialog from './components/base/AppDialog'
 import SnackBar from './components/base/AppSnackBar'
 import NotFoundPage from './views/Errors/NotFound'
 //ui
-import { MainWrapper } from './components/base/style'
+import CircularProgress from '@material-ui/core/CircularProgress'
+import { MainWrapper, PropgressContainer } from './components/base/style'
 //types
 import { IAppProps, IAppState } from './components/base/App-types'
 
 class App extends Component<IAppProps, IAppState> {
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      loading: false,
+    }
+  }
+
   async componentWillMount() {
     try {
+      this.setState({ loading: true })
       const { data } = await $axios.get(
         `/auth/users/${localStorage.getItem('user_id')}/`,
       )
@@ -29,27 +38,37 @@ class App extends Component<IAppProps, IAppState> {
       this.props.setUser(data)
     } catch (e) {
       console.log(e)
+    } finally {
+      this.setState({ loading: false })
     }
   }
   render() {
     return (
-      <>
-        <Header />
+      <div>
+        {this.state.loading ? (
+          <PropgressContainer>
+            <CircularProgress size="80px" />
+          </PropgressContainer>
+        ) : (
+          <div>
+            <Header />
 
-        <MainWrapper>
-          <Switch>
-            <Route path="/" exact component={Rooms} />
-            <Route path="/:id" component={CurrentRoom} />
-            <Route path="/auth" component={Auth} />
-            <Route path="*" component={NotFoundPage} />
-          </Switch>
-        </MainWrapper>
+            <MainWrapper>
+              <Switch>
+                <Route path="/" exact component={Rooms} />
+                <Route path="/:id" component={CurrentRoom} />
+                <Route path="/auth" component={Auth} />
+                <Route path="*" component={NotFoundPage} />
+              </Switch>
+            </MainWrapper>
 
-        <Footer />
+            <Footer />
 
-        <Dialog open={false} />
-        <SnackBar />
-      </>
+            <Dialog open={false} />
+            <SnackBar />
+          </div>
+        )}
+      </div>
     )
   }
 }
