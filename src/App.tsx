@@ -8,6 +8,7 @@ import CurrentRoom from './views/CurrentRoom/CurrentRoom'
 import Auth from './views/Auth/SignIn'
 //store
 import { setUser } from './store/auth'
+import { setRooms } from './store/room'
 //components
 import Header from './components/base/AppHeader'
 import Footer from './components/base/AppFooter'
@@ -31,11 +32,15 @@ class App extends Component<IAppProps, IAppState> {
   async componentWillMount() {
     try {
       this.setState({ loading: true })
-      const { data } = await $axios.get(
+
+      const { data: user } = await $axios.get(
         `/auth/users/${localStorage.getItem('user_id')}/`,
       )
 
-      this.props.setUser(data)
+      const { data: rooms } = await $axios.get('/room/rooms/')
+
+      this.props.setRooms(rooms)
+      this.props.setUser(user)
     } catch (e) {
       console.log(e)
     } finally {
@@ -75,6 +80,7 @@ class App extends Component<IAppProps, IAppState> {
 
 const mapDispatchProps = {
   setUser,
+  setRooms,
 }
 
 export default connect(null, mapDispatchProps)(App)
