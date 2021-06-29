@@ -3,6 +3,7 @@ import { IUser } from '../../types/store/auth'
 
 export interface IAppProps {
   setUser: (arg0: IUser) => void
+  setRooms: (arg0: any) => void
 }
 export interface IAppState {
   loading: boolean
