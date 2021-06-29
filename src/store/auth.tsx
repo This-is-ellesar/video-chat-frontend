@@ -3,6 +3,7 @@ import { IAuthState, IUser } from '../types/store/auth'
 const SET_USER_INFO = 'SET_USER_INFO'
 const SET_USER = 'SET_USER'
 const SET_USERS = 'SET_USERS'
+const LOG_OUT = 'LOG_OUT'
 
 const defaultState: IAuthState = {
   user: {
@@ -37,10 +38,18 @@ export const authReducer = (state: IAuthState = defaultState, action: any) => {
         ...state,
         users: action.payload,
       }
+    case LOG_OUT:
+      return {
+        ...defaultState,
+      }
     default:
       return state
   }
 }
+
+export const logOut = () => ({
+  type: LOG_OUT,
+})
 
 export const setUser = (data: IUser) => ({
   type: SET_USER,
