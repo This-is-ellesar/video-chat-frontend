@@ -2,6 +2,14 @@ import styled from 'styled-components'
 
 export const MainWrapper = styled.div``
 
+export const PropgressContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 70px);
+`
+
 export const Button = styled.button`
   margin: 0 10px;
   padding: 5px 15px;
@@ -23,7 +31,6 @@ export const Button = styled.button`
     color: #efefef;
   }
 `
-
 export const HeaderComponents = styled.div`
   height: 70px;
   width: 100%;
