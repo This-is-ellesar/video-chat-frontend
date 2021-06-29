@@ -33,14 +33,17 @@ class App extends Component<IAppProps, IAppState> {
     try {
       this.setState({ loading: true })
 
-      const { data: user } = await $axios.get(
-        `/auth/users/${localStorage.getItem('user_id')}/`,
-      )
-
       const { data: rooms } = await $axios.get('/room/rooms/')
 
       this.props.setRooms(rooms)
-      this.props.setUser(user)
+
+      if (localStorage.getItem('token')) {
+        const { data: user } = await $axios.get(
+          `/auth/users/${localStorage.getItem('user_id')}/`,
+        )
+
+        this.props.setUser(user)
+      }
     } catch (e) {
       console.log(e)
     } finally {
@@ -61,8 +64,8 @@ class App extends Component<IAppProps, IAppState> {
             <MainWrapper>
               <Switch>
                 <Route path="/" exact component={Rooms} />
-                <Route path="/:id" component={CurrentRoom} />
-                <Route path="/auth" component={Auth} />
+                {/* <Route path="/:id/" exact component={CurrentRoom} /> */}
+                <Route path="/auth/" exact component={Auth} />
                 <Route path="*" component={NotFoundPage} />
               </Switch>
             </MainWrapper>
