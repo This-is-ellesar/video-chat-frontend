@@ -15,4 +15,6 @@ export interface IDialog {
   dialogContent?: React.ReactChild | React.ReactNode
 }
 
-export interface IHeader {}
+export interface IHeader {
+  logOut: () => void
+}
