@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { useHistory } from 'react-router'
 import { $axios } from '../../http/axios-config'
 //store
-import { setUser } from '../../store/auth'
+import { setUserInfo } from '../../store/auth'
 //ui
 import { Button, TextField } from '@material-ui/core'
 import {
@@ -26,8 +26,10 @@ const DialogSignIn: FC<any> = (props) => {
       })
 
       localStorage.setItem('token', data.token)
+      localStorage.setItem('user_id', data.user._id)
 
-      props.setUser(data)
+      props.setUserInfo(data)
+
       history.push('/')
     } catch (error) {
       console.log(error)
@@ -74,7 +76,7 @@ const DialogSignIn: FC<any> = (props) => {
 }
 
 const mapDispatchProps = {
-  setUser,
+  setUserInfo,
 }
 
 export default connect(null, mapDispatchProps)(DialogSignIn)
