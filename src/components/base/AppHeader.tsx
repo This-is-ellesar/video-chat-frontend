@@ -2,7 +2,13 @@ import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTypedSelector } from '../hooks/useTypedSelector'
 //ui
-import { HeaderComponents, HeaderContainerItem, HeaderContainer } from './style'
+import Avatar from '@material-ui/core/Avatar'
+import {
+  HeaderComponents,
+  HeaderContainerItem,
+  HeaderContainer,
+  HeaderAccount,
+} from './style'
 import IconButton from '@material-ui/core/IconButton'
 //icons
 import Logo from '../../assets/icons/logo.svg'
@@ -13,6 +19,7 @@ import { IHeader } from './App-types'
 const Header: FC<IHeader> = () => {
   // @ts-ignore: Unreachable code error
   const { isAuthtentificated } = useTypedSelector((state) => state.auth)
+  const { user } = useTypedSelector((state) => state.auth)
 
   return (
     <HeaderComponents>
@@ -32,7 +39,15 @@ const Header: FC<IHeader> = () => {
               </IconButton>
             </NavLink>
           ) : (
-            <div>Ты авторизован, брат</div>
+            <HeaderAccount>
+              <span>{`${user.name} ${user.surname.slice(0, 1)}.`}</span>
+
+              {user.avatar ? (
+                <Avatar src={`http://127.0.0.1/${user.avatar}/`} />
+              ) : (
+                <Avatar />
+              )}
+            </HeaderAccount>
           )}
         </HeaderContainerItem>
       </HeaderContainer>
