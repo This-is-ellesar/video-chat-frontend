@@ -4,7 +4,9 @@ import { IUser } from '../../types/store/auth'
 export interface IAppProps {
   setUser: (arg0: IUser) => void
 }
-export interface IAppState {}
+export interface IAppState {
+  loading: boolean
+}
 
 export interface IDialog {
   width?: string
