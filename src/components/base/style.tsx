@@ -63,7 +63,10 @@ export const HeaderAccount = styled.div`
   color: #fff;
   font-family: 'Roboto';
   span {
-    margin-right: 10px;
+    margin: 0 10px;
+  }
+  img {
+    margin-left: 15px;
   }
 `
 

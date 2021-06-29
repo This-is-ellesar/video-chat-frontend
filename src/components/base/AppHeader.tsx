@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTypedSelector } from '../hooks/useTypedSelector'
 //ui
-import Avatar from '@material-ui/core/Avatar'
+import { Avatar, Button } from '@material-ui/core'
 import {
   HeaderComponents,
   HeaderContainerItem,
@@ -13,6 +13,7 @@ import IconButton from '@material-ui/core/IconButton'
 //icons
 import Logo from '../../assets/icons/logo.svg'
 import AccountIcon from '../../assets/icons/account-icon.svg'
+import ArrowBottomIcon from '../../assets/icons/arrow-bottom.svg'
 //interfaces
 import { IHeader } from './App-types'
 
@@ -39,15 +40,18 @@ const Header: FC<IHeader> = () => {
               </IconButton>
             </NavLink>
           ) : (
-            <HeaderAccount>
-              <span>{`${user.name} ${user.surname.slice(0, 1)}.`}</span>
+            <Button>
+              <HeaderAccount>
+                <span>{`${user.name} ${user.surname.slice(0, 1)}.`}</span>
 
-              {user.avatar ? (
-                <Avatar src={`http://127.0.0.1/${user.avatar}/`} />
-              ) : (
-                <Avatar />
-              )}
-            </HeaderAccount>
+                {user.avatar ? (
+                  <Avatar src={`http://127.0.0.1/${user.avatar}/`} />
+                ) : (
+                  <Avatar />
+                )}
+                <img src={ArrowBottomIcon} alt="" />
+              </HeaderAccount>
+            </Button>
           )}
         </HeaderContainerItem>
       </HeaderContainer>
