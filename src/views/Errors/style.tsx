@@ -5,7 +5,7 @@ export const NotFoundContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 55px);
   text-align: center;
   a {
     color: #3f51b5;

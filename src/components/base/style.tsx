@@ -7,7 +7,7 @@ export const PropgressContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 55px);
 `
 
 export const Button = styled.button`
@@ -32,7 +32,7 @@ export const Button = styled.button`
   }
 `
 export const HeaderComponents = styled.div`
-  height: 70px;
+  height: 55px;
   width: 100%;
   display: flex;
   justify-content: center;

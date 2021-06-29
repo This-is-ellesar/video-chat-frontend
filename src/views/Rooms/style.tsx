@@ -4,7 +4,7 @@ export const Room = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 55px);
   h1 {
     font-family: 'Roboto';
     font-weight: 400;
