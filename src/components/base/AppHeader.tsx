@@ -1,8 +1,12 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
+import { useHistory } from 'react-router'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
 import { useTypedSelector } from '../hooks/useTypedSelector'
+//store
+import { logOut } from '../../store/auth'
 //ui
-import { Avatar, Button } from '@material-ui/core'
+import { Avatar, Button, Menu, MenuItem } from '@material-ui/core'
 import {
   HeaderComponents,
   HeaderContainerItem,
@@ -17,10 +21,31 @@ import ArrowBottomIcon from '../../assets/icons/arrow-bottom.svg'
 //interfaces
 import { IHeader } from './App-types'
 
-const Header: FC<IHeader> = () => {
+const Header: FC<IHeader> = ({ logOut }) => {
   // @ts-ignore: Unreachable code error
   const { isAuthtentificated } = useTypedSelector((state) => state.auth)
   const { user } = useTypedSelector((state) => state.auth)
+  const [dropDown, setDropDown] = useState<null | HTMLElement>(null)
+  const history = useHistory()
+
+  const openDropDown = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setDropDown(event.currentTarget)
+  }
+
+  const closeDropDown = () => setDropDown(null)
+
+  const logOutHandler = () => {
+    try {
+      localStorage.clear()
+
+      closeDropDown()
+      logOut()
+
+      history.push('/auth/')
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
   return (
     <HeaderComponents>
@@ -34,24 +59,34 @@ const Header: FC<IHeader> = () => {
         </HeaderContainerItem>
         <HeaderContainerItem>
           {!isAuthtentificated ? (
-            <NavLink to="/auth">
+            <NavLink to="/auth/">
               <IconButton size="small" title="refresh" color="primary">
                 <img src={AccountIcon} alt="Sign in" title="Sign in" />
               </IconButton>
             </NavLink>
           ) : (
-            <Button>
-              <HeaderAccount>
-                <span>{`${user.name} ${user.surname.slice(0, 1)}.`}</span>
+            <>
+              <Button onClick={openDropDown}>
+                <HeaderAccount>
+                  <span>{`${user.name} ${user.surname.slice(0, 1)}.`}</span>
 
-                {user.avatar ? (
-                  <Avatar src={`http://127.0.0.1/${user.avatar}/`} />
-                ) : (
-                  <Avatar />
-                )}
-                <img src={ArrowBottomIcon} alt="" />
-              </HeaderAccount>
-            </Button>
+                  {user.avatar ? (
+                    <Avatar src={`http://127.0.0.1/${user.avatar}/`} />
+                  ) : (
+                    <Avatar />
+                  )}
+                  <img src={ArrowBottomIcon} alt="" />
+                </HeaderAccount>
+              </Button>
+              <Menu
+                anchorEl={dropDown}
+                keepMounted
+                open={Boolean(dropDown)}
+                onClose={closeDropDown}
+              >
+                <MenuItem onClick={logOutHandler}>Logout</MenuItem>
+              </Menu>
+            </>
           )}
         </HeaderContainerItem>
       </HeaderContainer>
@@ -59,4 +94,8 @@ const Header: FC<IHeader> = () => {
   )
 }
 
-export default Header
+const mapDispatchProps = {
+  logOut,
+}
+
+export default connect(null, mapDispatchProps)(Header)
