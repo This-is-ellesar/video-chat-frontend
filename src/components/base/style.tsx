@@ -50,6 +50,15 @@ export const HeaderContainerItem = styled.div`
     color: #fff;
   }
 `
+export const HeaderAccount = styled.div`
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-family: 'Roboto';
+  span {
+    margin-right: 10px;
+  }
+`
 
 export const DialogContainer = styled.div`
   width: ${({ width }: any) => (width ? width : '400px')};
