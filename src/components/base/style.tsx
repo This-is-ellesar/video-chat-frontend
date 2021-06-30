@@ -52,6 +52,11 @@ export const HeaderContainerItem = styled.div`
   align-items: center;
   font-family: 'Roboto';
   font-size: 16px;
+  .dropdown {
+    width: 150px;
+    right: 13%;
+    top: 5%;
+  }
   a {
     text-decoration: none;
     color: #fff;

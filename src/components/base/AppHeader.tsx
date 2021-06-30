@@ -22,7 +22,6 @@ import ArrowBottomIcon from '../../assets/icons/arrow-bottom.svg'
 import { IHeader } from './App-types'
 
 const Header: FC<IHeader> = ({ logOut }) => {
-  // @ts-ignore: Unreachable code error
   const { isAuthtentificated } = useTypedSelector((state) => state.auth)
   const { user } = useTypedSelector((state) => state.auth)
   const [dropDown, setDropDown] = useState<null | HTMLElement>(null)
