@@ -40,7 +40,9 @@ export const authReducer = (state: IAuthState = defaultState, action: any) => {
       }
     case LOG_OUT:
       return {
-        ...defaultState,
+        ...state,
+        user: defaultState.user,
+        isAuthtentificated: false,
       }
     default:
       return state

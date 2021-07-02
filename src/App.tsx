@@ -63,9 +63,9 @@ class App extends Component<IAppProps, IAppState> {
 
             <MainWrapper>
               <Switch>
+                <Route path="/auth" component={Auth} />
+                <Route path="/:id/" component={CurrentRoom} />
                 <Route path="/" exact component={Rooms} />
-                {/* <Route path="/:id/" exact component={CurrentRoom} /> */}
-                <Route path="/auth/" exact component={Auth} />
                 <Route path="*" component={NotFoundPage} />
               </Switch>
             </MainWrapper>
