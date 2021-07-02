@@ -6,7 +6,11 @@ import { IProps, IState } from './current-room-types'
 
 class CurrentRoom extends Component<IProps, IState> {
   render() {
-    return <CurrentRoomContainer>dadaw</CurrentRoomContainer>
+    return (
+      <CurrentRoomContainer>
+        <main>dadaw</main>
+      </CurrentRoomContainer>
+    )
   }
 }
 
