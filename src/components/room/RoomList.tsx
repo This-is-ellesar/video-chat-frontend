@@ -13,7 +13,6 @@ const RoomList: FC = () => {
   return (
     <RoomContainer>
       {rooms.map((room: IRoom, index: string) => (
-        // @ts-ignore: Unreachable code error
         <RoomListItem room={room} key={index} />
       ))}
     </RoomContainer>
