@@ -33,12 +33,12 @@ const Header: FC<IHeader> = ({ logOut }) => {
 
   const closeDropDown = () => setDropDown(null)
 
-  const logOutHandler = () => {
+  const logOutHandler = async () => {
     try {
-      localStorage.clear()
-
       closeDropDown()
-      logOut()
+
+      await localStorage.clear()
+      await logOut()
 
       history.push('/auth/')
     } catch (e) {
