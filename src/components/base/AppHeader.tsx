@@ -74,7 +74,11 @@ const Header: FC<IHeader> = ({ logOut }) => {
                   ) : (
                     <Avatar />
                   )}
-                  <img src={ArrowBottomIcon} alt="" />
+                  <img
+                    src={ArrowBottomIcon}
+                    className={dropDown ? 'arrow--top' : 'arrow--bottom'}
+                    alt=""
+                  />
                 </HeaderAccount>
               </Button>
               <Menu

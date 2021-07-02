@@ -67,6 +67,14 @@ export const HeaderAccount = styled.div`
   align-items: center;
   color: #fff;
   font-family: 'Roboto';
+  .arrow--top {
+    transition: 0.1s all;
+    transform: rotate(180deg);
+  }
+  .arrow--bottom {
+    transition: 0.1s all;
+    transform: rotate(0);
+  }
   span {
     margin: 0 10px;
   }
