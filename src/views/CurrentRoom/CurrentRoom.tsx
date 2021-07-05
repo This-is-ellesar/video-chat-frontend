@@ -8,7 +8,9 @@ class CurrentRoom extends Component<IProps, IState> {
   render() {
     return (
       <CurrentRoomContainer>
-        <main>dadaw</main>
+        <main>
+          <h1>Available rooms</h1>
+        </main>
       </CurrentRoomContainer>
     )
   }
