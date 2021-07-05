@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
+import socket from './http/socket-io'
+// import socket from './http/socket-io'
 import { $axios } from './http/axios-config'
 //views
 import Rooms from './views/Rooms/Rooms'
@@ -28,14 +30,17 @@ class App extends Component<IAppProps, IAppState> {
       loading: false,
     }
   }
-
   async componentWillMount() {
     try {
+      socket.on('share-rooms', ({ rooms = [] } = {}) => {
+        this.props.setRooms(rooms)
+      })
+
       this.setState({ loading: true })
 
-      const { data: rooms } = await $axios.get('/room/rooms/')
+      // const { data: rooms } = await $axios.get('/room/rooms/')
 
-      this.props.setRooms(rooms)
+      // this.props.setRooms(rooms)
 
       if (localStorage.getItem('token')) {
         const { data: user } = await $axios.get(
