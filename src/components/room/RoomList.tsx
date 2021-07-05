@@ -1,4 +1,5 @@
 import { FC, useState, useEffect, useRef } from 'react'
+import { v4 } from 'uuid'
 import { useHistory } from 'react-router-dom'
 import { useTypedSelector } from '../hooks/useTypedSelector'
 import socket from '../../http/socket-io'
@@ -32,7 +33,7 @@ const RoomList: FC = () => {
       {rooms.map((roomID) => (
         <div key={roomID}>
           <li>{roomID}</li>
-          <button onClick={() => history.push(`/${roomID}/`)}>JOIN ROOM</button>
+          <button onClick={() => history.push(`/${v4()}/`)}>JOIN ROOM</button>
         </div>
       ))}
     </div>
