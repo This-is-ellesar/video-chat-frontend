@@ -1,6 +1,6 @@
 import { FC } from 'react'
 //store
-import { useTypedSelector } from '../hooks/useTypedSelector'
+import { useTypedSelector } from '../../hooks/useTypedSelector'
 //ui
 import { Snackbar } from '@material-ui/core'
 
