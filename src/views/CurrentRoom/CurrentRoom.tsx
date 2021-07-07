@@ -1,4 +1,6 @@
 import { Component } from 'react'
+//components
+import Room from './Room'
 //ui
 import { CurrentRoomContainer } from './style'
 //types
@@ -9,7 +11,7 @@ class CurrentRoom extends Component<IProps, IState> {
     return (
       <CurrentRoomContainer>
         <main>
-          <h1>Available rooms</h1>
+          <Room />
         </main>
       </CurrentRoomContainer>
     )
