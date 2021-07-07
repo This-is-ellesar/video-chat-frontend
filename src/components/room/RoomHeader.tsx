@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { v4 } from 'uuid'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router'
 import { $axios } from '../../http/axios-config'
@@ -17,7 +18,7 @@ const RoomHeader: FC<IPropsRoomHeader> = (props) => {
 
   const createRoom = () => {
     try {
-      history.push(`${Date.now()}`)
+      history.push(`/${v4()}/`)
     } catch (e) {
       console.log(e)
     }
