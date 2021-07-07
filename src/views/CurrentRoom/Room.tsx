@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import { useParams } from 'react-router-dom'
 import useWebRtc from '../../hooks/useWebRtc'
+//ui
+import { RoomVideoContainer, RoomVideo, Video } from './style'
 
 const Room: FC = () => {
   const { id: roomId }: any = useParams()
@@ -8,21 +10,23 @@ const Room: FC = () => {
   const { clients, provideMediaRef } = useWebRtc(roomId)
 
   return (
-    <div>
+    <RoomVideo>
       <h1>Room: {roomId}</h1>
-      {clients.map((clientId: any) => (
-        <div key={clientId}>
-          <video
-            ref={(instance) => {
-              provideMediaRef(clientId, instance)
-            }}
-            autoPlay
-            playsInline
-            muted={clientId === 'LOCAL_VIDEO'}
-          />
-        </div>
-      ))}
-    </div>
+      <RoomVideoContainer>
+        {clients.map((clientId: any) => (
+          <Video key={clientId}>
+            <video
+              ref={(instance) => {
+                provideMediaRef(clientId, instance)
+              }}
+              autoPlay
+              playsInline
+              muted={clientId === 'LOCAL_VIDEO'}
+            />
+          </Video>
+        ))}
+      </RoomVideoContainer>
+    </RoomVideo>
   )
 }
 
