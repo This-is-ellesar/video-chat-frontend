@@ -12,7 +12,7 @@ const RoomListItem: FC<IPropsRoomList> = ({ room }) => {
     <RoomListItemContainer>
       <RoomItemHeader>
         <div>
-          <h1>Room: {room.name}</h1>
+          <h1>Room: {room.name || room.roomID}</h1>
         </div>
         <div>
           {room.avatar ? (
@@ -26,8 +26,8 @@ const RoomListItem: FC<IPropsRoomList> = ({ room }) => {
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. A deserunt
       </RoomItemMain>
       <RoomItemFooter>
-        <div>Room users: {room.users.length}</div>
-        <NavLink to={`${room._id}/`} title="Открыть">
+        <div>Room users: {room.roomID}</div>
+        <NavLink to={`${room}/`} title="Открыть">
           Open
         </NavLink>
       </RoomItemFooter>
