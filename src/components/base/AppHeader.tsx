@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 import { useHistory } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { useTypedSelector } from '../hooks/useTypedSelector'
+import { useTypedSelector } from '../../hooks/useTypedSelector'
 //store
 import { logOut } from '../../store/auth'
 //ui
